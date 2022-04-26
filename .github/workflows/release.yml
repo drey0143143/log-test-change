@@ -1,0 +1,34 @@
+name: Changelog & Releases
+on:
+ push:
+   branches:
+     - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # It is required to have a checkout step prior to changelog and release step,to allow action to discover the configuration files.
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 200
+          persist-credentials: false
+
+        # This step creates changelog.md in the root of the repositorys
+      - name: Changelog Actions
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.PAT_ACCESS }} # This token is provided by Actions, you do not need to create your own token
+          
+        # This step creates release if there are changes from the previous release and skip if there are no changes from the previous release.
+      - name: create releases
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false'}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_ACCESS }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
