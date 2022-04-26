@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/drey0143143/log-test-change/compare/v0.1.1...v0.1.2) (2022-04-26)
+
+
+### Bug Fixes
+
+* add new line ([916118e](https://github.com/drey0143143/log-test-change/commit/916118efb1b95b3c8fd62b4010e96cdd50079697))
+
+
+
 ## [0.1.1](https://github.com/drey0143143/log-test-change/compare/v0.1.0...v0.1.1) (2022-04-26)
 
 
