@@ -1,4 +1,13 @@
-## 0.0.1 (2022-04-26)
+# [0.1.0](https://github.com/drey0143143/log-test-change/compare/v0.0.1...v0.1.0) (2022-04-26)
+
+
+### Features
+
+* add new functionality ([e2d29d7](https://github.com/drey0143143/log-test-change/commit/e2d29d762300d404acfb63de0280dbb78b76f4d9))
+
+
+
+## [0.0.1](https://github.com/drey0143143/log-test-change/compare/b7155f46db36436298c138e02cd287aa5e0035cb...v0.0.1) (2022-04-26)
 
 
 ### Bug Fixes
