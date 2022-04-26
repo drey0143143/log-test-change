@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/drey0143143/log-test-change/compare/v0.1.0...v0.1.1) (2022-04-26)
+
+
+### Bug Fixes
+
+* removed unnecessary code ([126c29f](https://github.com/drey0143143/log-test-change/commit/126c29f250b10f8b5c9cc6bf7c0b1d4fef66b807))
+
+
+
 # [0.1.0](https://github.com/drey0143143/log-test-change/compare/v0.0.1...v0.1.0) (2022-04-26)
 
 
