@@ -20,14 +20,14 @@ jobs:
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
-          github-token: ${{ secrets.PAT_ACCESS }} # This token is provided by Actions, you do not need to create your own token
+          github-token: ${{ secrets.PAT_ACCESS }} # This token is needed to grant GitHub Action required permission to push changelog.md to a protected branch
           
         # This step creates release if there are changes from the previous release and skip if there are no changes from the previous release.
       - name: create releases
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false'}}
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_ACCESS }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.PAT_ACCESS }} # This token is needed to grant GitHub Action required permission to push release to a protected branch
         with:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
