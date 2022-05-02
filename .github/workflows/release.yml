@@ -12,6 +12,8 @@ jobs:
       # It is required to have a checkout step prior to changelog and release step,to allow action to discover the configuration files.
       - uses: actions/checkout@v2
         with:
+          # This is needed to retrieve all commits history in a single branch with 200 being the maximum fetch-depth
+          # using fetch-depth "0" gets all commit history for all branches and tags in the repository which we didn't need and felt was an expensive operation.
           fetch-depth: 200
           persist-credentials: false
 
